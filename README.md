@@ -12,14 +12,6 @@ A modern task management web application built using **Angular**, **Node.js**, *
 - 🌐 Full-stack MERN architecture with REST API integration
 - 💡 Designed for functional testing & QA engineers
 
----
-
-## 📸 Demo
-
-[🟢 Live Demo on Vercel (insert your link here)](https://your-vercel-link.vercel.app)
-
----
-
 ## 🔧 Tech Stack
 
 | Frontend                | Backend                     | Database            |
