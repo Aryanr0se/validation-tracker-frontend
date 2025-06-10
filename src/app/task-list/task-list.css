@@ -1,0 +1,47 @@
+.task-list-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-card {
+  border-left: 6px solid #4a90e2;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #4a90e2;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.task-card.completed .badge {
+  background-color: #27ae60;
+}
+
+.task-card.pending .badge {
+  background-color: #f39c12;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+

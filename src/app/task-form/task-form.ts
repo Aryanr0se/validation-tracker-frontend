@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskService } from '../task.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-task-form',
@@ -18,7 +19,10 @@ export class TaskFormComponent {
     dueDate: ''
   };
 
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private toastr: ToastrService
+  ) {}
 
   async submitForm() {
     if (!this.task.title || !this.task.category || !this.task.dueDate) {
@@ -28,11 +32,11 @@ export class TaskFormComponent {
 
     try {
       await this.taskService.addTask(this.task);
-      alert('Task added!');
-      window.location.reload();  // reload page to show updated list
+      this.toastr.success('Task successfully added!', 'Success 🎉');
+      this.task = { title: '', category: '', status: 'Pending', dueDate: '' };
     } catch (err) {
       console.error('Failed to add task:', err);
-      alert('Failed to add task. Check console for details.');
+      this.toastr.error('Failed to add task. Check console.', 'Error ❌');
     }
   }
 }
